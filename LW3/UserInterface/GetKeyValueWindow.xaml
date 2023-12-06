@@ -1,0 +1,79 @@
+﻿<Window x:Class="UserInterface.GetKeyValueWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserInterface"
+        mc:Ignorable="d"
+        Title="GetKeyWindow"
+        Height="200"
+        Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Label VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Margin="20,10,20,0"
+                   DockPanel.Dock="Top">
+                <TextBlock Name="LblMessage"
+                           TextWrapping="Wrap" />
+            </Label>
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        Orientation="Horizontal"
+                        DockPanel.Dock="Bottom">
+                <WrapPanel HorizontalAlignment="Center"
+                           VerticalAlignment="Bottom"
+                           Orientation="Horizontal">
+                    <Label>Ключ:</Label>
+                    <TextBox Name="TboxKey"
+                             Width="50"
+                             VerticalAlignment="Center"
+                             KeyDown="TboxKey_KeyDown" PreviewTextInput="TboxKey_PreviewTextInput"></TextBox>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center"
+                           VerticalAlignment="Bottom"
+                           Orientation="Horizontal"
+                           Margin="10,0,0,0">
+                    <Label>Значення:</Label>
+                    <TextBox Name="TboxValue"
+                             Width="50"
+                             VerticalAlignment="Center"
+                             KeyDown="TboxValue_KeyDown"></TextBox>
+                </WrapPanel>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel Grid.Row="1"
+                   Margin="0,24,0,0">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top">
+                <Button Name="BtnConfirm"
+                        Width="32"
+                        Margin="0,0,10,0"
+                        FontSize="20"
+                        Foreground="#FF208F10"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="BtnConfirm_Click">✓</Button>
+                <Button Name="BtnCancel"
+                        Width="32"
+                        Margin="10,0,0,0"
+                        Foreground="#FFD83C04"
+                        FontWeight="Bold"
+                        FontSize="20"
+                        VerticalAlignment="Center"
+                        Click="BtnCancel_Click">
+                    ❌
+                </Button>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>
